@@ -1,3 +1,3 @@
-module github.com/gogo/protobuf
+module github.com/frankee/protobuf
 
 require github.com/kisielk/errcheck v1.1.0 // indirect
