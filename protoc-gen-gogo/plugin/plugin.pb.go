@@ -91,7 +91,7 @@ type CodeGeneratorRequest struct {
 	// The .proto files that were explicitly listed on the command-line.  The
 	// code generator should generate code only for these files.  Each file's
 	// descriptor will be included in proto_file, below.
-	FileToGenerate []string `protobuf:"bytes,1,rep,name=file_to_generate,json=fileToGenerate" json:"file_to_generate,omitempty"`
+	FileToGenerate []string `protobuf:"bytes,1,rep,name=file_to_generate,json=fileToGenerate" json:"fileToGenerate,omitempty"`
 	// The generator parameter passed on the command-line.
 	Parameter *string `protobuf:"bytes,2,opt,name=parameter" json:"parameter,omitempty"`
 	// FileDescriptorProtos for all files in files_to_generate and everything
@@ -108,9 +108,9 @@ type CodeGeneratorRequest struct {
 	//
 	// Type names of fields and extensions in the FileDescriptorProto are always
 	// fully qualified.
-	ProtoFile []*descriptor.FileDescriptorProto `protobuf:"bytes,15,rep,name=proto_file,json=protoFile" json:"proto_file,omitempty"`
+	ProtoFile []*descriptor.FileDescriptorProto `protobuf:"bytes,15,rep,name=proto_file,json=protoFile" json:"protoFile,omitempty"`
 	// The version number of protocol compiler.
-	CompilerVersion      *Version `protobuf:"bytes,3,opt,name=compiler_version,json=compilerVersion" json:"compiler_version,omitempty"`
+	CompilerVersion      *Version `protobuf:"bytes,3,opt,name=compiler_version,json=compilerVersion" json:"compilerVersion,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -274,7 +274,7 @@ type CodeGeneratorResponse_File struct {
 	// command line.
 	//
 	// If |insertion_point| is present, |name| must also be present.
-	InsertionPoint *string `protobuf:"bytes,2,opt,name=insertion_point,json=insertionPoint" json:"insertion_point,omitempty"`
+	InsertionPoint *string `protobuf:"bytes,2,opt,name=insertion_point,json=insertionPoint" json:"insertionPoint,omitempty"`
 	// The file contents.
 	Content              *string  `protobuf:"bytes,15,opt,name=content" json:"content,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
