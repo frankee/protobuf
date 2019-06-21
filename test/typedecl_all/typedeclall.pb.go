@@ -5,8 +5,8 @@ package typedeclall
 
 import (
 	fmt "fmt"
-	_ "github.com/gogo/protobuf/gogoproto"
-	proto "github.com/gogo/protobuf/proto"
+	_ "github.com/frankee/protobuf/gogoproto"
+	proto "github.com/frankee/protobuf/proto"
 	io "io"
 	math "math"
 	math_bits "math/bits"

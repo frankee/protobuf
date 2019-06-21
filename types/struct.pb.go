@@ -7,8 +7,8 @@ import (
 	bytes "bytes"
 	encoding_binary "encoding/binary"
 	fmt "fmt"
-	proto "github.com/gogo/protobuf/proto"
-	github_com_gogo_protobuf_sortkeys "github.com/gogo/protobuf/sortkeys"
+	proto "github.com/frankee/protobuf/proto"
+	github_com_frankee_protobuf_sortkeys "github.com/frankee/protobuf/sortkeys"
 	io "io"
 	math "math"
 	math_bits "math/bits"
@@ -740,10 +740,10 @@ func (this *Struct) GoString() string {
 	s := make([]string, 0, 5)
 	s = append(s, "&types.Struct{")
 	keysForFields := make([]string, 0, len(this.Fields))
-	for k := range this.Fields {
+	for k, _ := range this.Fields {
 		keysForFields = append(keysForFields, k)
 	}
-	github_com_gogo_protobuf_sortkeys.Strings(keysForFields)
+	github_com_frankee_protobuf_sortkeys.Strings(keysForFields)
 	mapStringForFields := "map[string]*Value{"
 	for _, k := range keysForFields {
 		mapStringForFields += fmt.Sprintf("%#v: %#v,", k, this.Fields[k])
@@ -860,7 +860,7 @@ func (m *Struct) MarshalTo(dAtA []byte) (int, error) {
 	var l int
 	_ = l
 	if len(m.Fields) > 0 {
-		for k := range m.Fields {
+		for k, _ := range m.Fields {
 			dAtA[i] = 0xa
 			i++
 			v := m.Fields[k]
@@ -1314,10 +1314,10 @@ func (this *Struct) String() string {
 		return "nil"
 	}
 	keysForFields := make([]string, 0, len(this.Fields))
-	for k := range this.Fields {
+	for k, _ := range this.Fields {
 		keysForFields = append(keysForFields, k)
 	}
-	github_com_gogo_protobuf_sortkeys.Strings(keysForFields)
+	github_com_frankee_protobuf_sortkeys.Strings(keysForFields)
 	mapStringForFields := "map[string]*Value{"
 	for _, k := range keysForFields {
 		mapStringForFields += fmt.Sprintf("%v: %v,", k, this.Fields[k])

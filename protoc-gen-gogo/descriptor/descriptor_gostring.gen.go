@@ -5,8 +5,8 @@ package descriptor
 
 import (
 	fmt "fmt"
-	github_com_gogo_protobuf_proto "github.com/gogo/protobuf/proto"
-	proto "github.com/gogo/protobuf/proto"
+	github_com_frankee_protobuf_proto "github.com/frankee/protobuf/proto"
+	proto "github.com/frankee/protobuf/proto"
 	math "math"
 	reflect "reflect"
 	sort "sort"
@@ -732,8 +732,8 @@ func valueToGoStringDescriptor(v interface{}, typ string) string {
 	pv := reflect.Indirect(rv).Interface()
 	return fmt.Sprintf("func(v %v) *%v { return &v } ( %#v )", typ, typ, pv)
 }
-func extensionToGoStringDescriptor(m github_com_gogo_protobuf_proto.Message) string {
-	e := github_com_gogo_protobuf_proto.GetUnsafeExtensionsMap(m)
+func extensionToGoStringDescriptor(m github_com_frankee_protobuf_proto.Message) string {
+	e := github_com_frankee_protobuf_proto.GetUnsafeExtensionsMap(m)
 	if e == nil {
 		return "nil"
 	}
