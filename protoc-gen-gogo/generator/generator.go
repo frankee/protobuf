@@ -3305,7 +3305,7 @@ func (g *Generator) generateMessage(message *Descriptor) {
 			dname := "is" + goTypeName + "_" + fname
 			oneOftag := `protobuf_oneof:"` + odp.GetName() + `"`
 			if gogoJsonTag != nil {
-				oneOftag += ` json:"` + *gogoJsonTag + `"`
+				oneOftag += ` json:"` + *gogoJsonTag + `,omitempty"`
 			}
 			of := oneofField{
 				fieldCommon: fieldCommon{
